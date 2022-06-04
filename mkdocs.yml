@@ -1,0 +1,43 @@
+site_name: Windows API Access From PowerShell
+nav:
+  - index.md
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      default_language: en
+      languages:
+        en:
+          name: English
+          build: true
+          site_name: "Windows API Access From PowerShell"
+        ru:
+          name: Russian
+          build: true
+          site_name: "Вызов Windows API из PowerShell"
+theme:
+    name: material
+    font: false
+    palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+markdown_extensions:
+  - def_list
+  - pymdownx.magiclink # auto-link HTML, FTP, and email links https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
+  - pymdownx.keys # add keys like ++ctrl+alt+delete++ # https://facelessuser.github.io/pymdown-extensions/extensions/keys/
+  - pymdownx.tabbed # add tabs https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/
+  - pymdownx.details # add spoiler (??? note) https://facelessuser.github.io/pymdown-extensions/extensions/details/
+  - footnotes # https://python-markdown.github.io/extensions/footnotes/
+  - tables # https://python-markdown.github.io/extensions/tables/
+  - admonition # tips & notes (!!! note) https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+  - attr_list # https://python-markdown.github.io/extensions/attr_list/
+  - codehilite # https://python-markdown.github.io/extensions/code_hilite/
+  - smarty # converts ASCII dashes, quotes and ellipses to their HTML entity equivalents https://python-markdown.github.io/extensions/smarty/
