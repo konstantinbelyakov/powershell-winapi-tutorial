@@ -1,4 +1,7 @@
 site_name: Windows API Access From PowerShell
+site_url: https://konstantinbelyakov.github.io/powershell-winapi-tutorial/
+repo_url: https://github.com/konstantinbelyakov/powershell-winapi-tutorial
+edit_uri: edit/main/docs/
 nav:
   - index.md
 plugins:
@@ -15,6 +18,7 @@ plugins:
           name: Russian
           build: true
           site_name: "Вызов Windows API из PowerShell"
+  - git-revision-date-localized
 theme:
     name: material
     font: false
