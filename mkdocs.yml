@@ -39,9 +39,10 @@ markdown_extensions:
   - pymdownx.keys # add keys like ++ctrl+alt+delete++ # https://facelessuser.github.io/pymdown-extensions/extensions/keys/
   - pymdownx.tabbed # add tabs https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/
   - pymdownx.details # add spoiler (??? note) https://facelessuser.github.io/pymdown-extensions/extensions/details/
+  - pymdownx.snippets # insert a file into another markdown file https://facelessuser.github.io/pymdown-extensions/extensions/snippets/
+  - pymdownx.superfences # https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
   - footnotes # https://python-markdown.github.io/extensions/footnotes/
   - tables # https://python-markdown.github.io/extensions/tables/
   - admonition # tips & notes (!!! note) https://squidfunk.github.io/mkdocs-material/reference/admonitions/
   - attr_list # https://python-markdown.github.io/extensions/attr_list/
-  - codehilite # https://python-markdown.github.io/extensions/code_hilite/
   - smarty # converts ASCII dashes, quotes and ellipses to their HTML entity equivalents https://python-markdown.github.io/extensions/smarty/
