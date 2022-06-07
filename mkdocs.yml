@@ -4,6 +4,12 @@ repo_url: https://github.com/konstantinbelyakov/powershell-winapi-tutorial
 edit_uri: edit/main/docs/
 nav:
   - index.md
+  - Ways to Call a Win32 API Method:
+     - win32-approaches/index.md
+     - "Approach 1: Add-Type Cmdlet": win32-approaches/add-type.md
+     - "Approach 2: Private .NET Method": win32-approaches/private-method.md
+     - "Approach 3: Reflection": win32-approaches/reflection.md
+  - summary.md
 plugins:
   - search
   - i18n:
@@ -33,6 +39,11 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+    features:
+      - navigation.indexes
+      - navigation.expand
+extra_css:
+  - stylesheets/extra.css
 markdown_extensions:
   - def_list
   - pymdownx.magiclink # auto-link HTML, FTP, and email links https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
