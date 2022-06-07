@@ -1,3 +1,1 @@
 # Introduction
-
-Introduction goes here...
