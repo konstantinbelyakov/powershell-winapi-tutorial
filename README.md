@@ -1,6 +1,6 @@
 # Windows API access from PowerShell
 
-![mkdocs site deployment status](https://github.com/konstantinbelyakov/powershell-winapi-tutorial/actions/workflows/ci.yml/badge.svg)
+![mkdocs site deployment status](https://github.com/konstantinbelyakov/powershell-winapi-tutorial/actions/workflows/mkdocs.yml/badge.svg)
 
 This repository contains tutorials and examples on how to access the Windows API from PowerShell scripts. You can view the content at https://konstantinbelyakov.github.io/powershell-winapi-tutorial/.
 
