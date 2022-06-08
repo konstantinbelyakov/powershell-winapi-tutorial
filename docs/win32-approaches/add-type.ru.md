@@ -14,23 +14,27 @@
 
 * Переменная `$MethodDefinition` содержит определение метода на C#, соответствующее сигнатуре `CopyFile` на C++:
 
-    ```cpp  title="C++"
-    BOOL CopyFile(
-        [in] LPCTSTR lpExistingFileName,
-        [in] LPCTSTR lpNewFileName,
-        [in] BOOL    bFailIfExists
-    );
-    ```
-    ```cs title="C#"
-    --8<-- "examples/add-type/CopyFile.cs"
-    ```
+    ??? info "Разверните, чтобы увидеть подробности"
 
-    Обратите внимание на корректность соответствия типов параметров в С++ и в .NET коде:
+        ```cpp title="Сигнатура метода на C++"
+        BOOL CopyFile(
+            [in] LPCTSTR lpExistingFileName,
+            [in] LPCTSTR lpNewFileName,
+            [in] BOOL    bFailIfExists
+        );
+        ```
+        ```cs title="Определение метода на C#"
+        --8<-- "examples/add-type/CopyFile.cs"
+        ```
 
-    | Тип C/C++  | Тип .NET  |
-    |------------|-----------|
-    | BOOL       | bool      |
-    | LPCTSTR    | string    |
+        Обратите внимание на корректность соответствия типов параметров в С++ и в .NET коде:
+
+        | Тип C/C++  | Тип .NET  |
+        |------------|-----------|
+        | BOOL       | bool      |
+        | LPCTSTR    | string    |
+
+        Аттрибут [DllImport](https://docs.microsoft.com/ru-ru/dotnet/api/system.runtime.interopservices.dllimportattribute) указывает что метод `CopyFile` доступен в библиотеке _kernel32.dll_ в качестве статической точки входа.
 
 * Командлет `Add-Type` создает класс `Kernel32` содержащий метод `CopyItem`, определение которого задано на предыдущем шаге.
 

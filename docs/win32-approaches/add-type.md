@@ -12,25 +12,30 @@ Consider the script that calls the `CopyFile` function:
 
 This script does the following:
 
-* The `$MethodDefinition` variable contains the С# method definition that matches the C++ signature of `CopyFile`:
+* The `$MethodDefinition` variable contains the С# method definition that matches the C++ signature of `CopyFile`.
 
-    ```cpp title="C++"
-    BOOL CopyFile(
-        [in] LPCTSTR lpExistingFileName,
-        [in] LPCTSTR lpNewFileName,
-        [in] BOOL    bFailIfExists
-    );
-    ```
-    ```cs title="C#"
-    --8<-- "examples/add-type/CopyFile.cs"
-    ```
+    ??? info "Expand to see the details"
 
-    Note the correct translation of C++ parameter types to corresponding .NET types:
+        ```cpp title="C++ signature"
+        BOOL CopyFile(
+            [in] LPCTSTR lpExistingFileName,
+            [in] LPCTSTR lpNewFileName,
+            [in] BOOL    bFailIfExists
+        );
+        ```
+        ```cs title="C# definition"
+        --8<-- "examples/add-type/CopyFile.cs"
+        ```
 
-    | C/C++ Type | .NET Type |
-    |------------|-----------|
-    | BOOL       | bool      |
-    | LPCTSTR    | string    |
+        The [DllImport](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dllimportattribute) attribute indicates that the `CopyFile` method is exposed by the _kernel32.dll_ library as a static entry point.
+
+
+        Note the correct translation of C++ parameter types to corresponding .NET types:
+
+        | C/C++ Type | .NET Type |
+        |------------|-----------|
+        | BOOL       | bool      |
+        | LPCTSTR    | string    |
 
 * The `Add-Type` cmdlet creates the `Kernel32` class containing the `CopyFile` method defined at the previous step.
 
