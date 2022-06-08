@@ -4,7 +4,11 @@
 
 This repository contains tutorials and examples on how to access the Windows API from PowerShell scripts. You can view the content at https://konstantinbelyakov.github.io/powershell-winapi-tutorial/.
 
-## How to Build the Web Site
+The repository includes the [mkdocs](https://www.mkdocs.org/) documentation project. Content is written in markdown and resides in the [docs](docs) folder. Code examples are in the [examples](examples) folder.
+
+The web site is automatically rebuilt and updated by GitHub when changes occur in the `main` branch.
+
+## How to Build the Web Site Locally
 
 You can build and run the website from this repository locally. If you have [Docker](https://www.docker.com/) installed, there's no need to install and configure mkdocs.
 
