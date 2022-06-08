@@ -54,5 +54,12 @@
 --8<-- "examples/add-type/CopyRawItem.ps1"
 ```
 
-!!! примечание
+В этом примере, файл базы данных диспетчера учётных записей безопасности копируется из [теневой копии тома](https://docs.microsoft.com/ru-ru/windows/win32/vss/volume-shadow-copy-service-portal) во временную папку (что невозможно при использовании стандартного командлета [Copy-Item](https://docs.microsoft.com/ru-ru/powershell/module/microsoft.powershell.management/copy-item)). Если запустить `Copy-RawItem` дважды, вы получите ошибку "The file exists":
+
+![Copy-RawItem result](../images/copy-rawitem-result.png)
+
+!!! Tip "Совет"
+    Если вы получаете ошибку "Access is denied" при доступе к теневой копии, перезапустите сеанс PowerShell от имени администратора.
+
+!!! Note "Примечание"
     Использованный здесь код доступен на GitHub: [powershell-winapi-tutorial/examples/add-type](https://github.com/konstantinbelyakov/powershell-winapi-tutorial/tree/main/examples/add-type).

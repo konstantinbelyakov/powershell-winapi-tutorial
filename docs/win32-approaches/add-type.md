@@ -54,5 +54,12 @@ You can import this module and call `Copy-RawItem` from your script as follows:
 --8<-- "examples/add-type/CopyRawItem.ps1"
 ```
 
-!!! note
+Here, the security account manager database file is copied from the [volume shadow copy](https://docs.microsoft.com/en-us/windows/win32/vss/volume-shadow-copy-service-portal) to a temporary folder (which is impossible when using standard [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item) commandlet). If you run `Copy-RawItem` twice, you will see "The file exists" error:
+
+![Copy-RawItem result](../images/copy-rawitem-result.png)
+
+!!! Tip
+    If you receive the "Access is denied" error when accessing the shadow copy, run your PowerShell session as administrator.
+
+!!! Note
     You can get the complete code demonstrated here at GitHub: [powershell-winapi-tutorial/examples/add-type](https://github.com/konstantinbelyakov/powershell-winapi-tutorial/tree/main/examples/add-type).
