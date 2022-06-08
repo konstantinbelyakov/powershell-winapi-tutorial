@@ -14,10 +14,12 @@ function Copy-RawItem {
         $FailIfExists
     )
     $DynAssembly = New-Object System.Reflection.AssemblyName('Win32Lib')
-    $AssemblyBuilder = [AppDomain]::CurrentDomain.DefineDynamicAssembly($DynAssembly, [Reflection.Emit.AssemblyBuilderAccess]::Run)
+    $AssemblyBuilder = [AppDomain]::CurrentDomain.DefineDynamicAssembly(
+        $DynAssembly, [Reflection.Emit.AssemblyBuilderAccess]::Run)
     $ModuleBuilder = $AssemblyBuilder.DefineDynamicModule('Win32Lib', $False)
     $TypeBuilder = $ModuleBuilder.DefineType('Kernel32', 'Public, Class')
-    $PInvokeMethod = $TypeBuilder.DefineMethod('CopyFile', [Reflection.MethodAttributes] 'Public, Static', [Bool], [Type[]] @([String], [String], [Bool]))
+    $PInvokeMethod = $TypeBuilder.DefineMethod('CopyFile', [Reflection.MethodAttributes] 'Public, Static',
+        [Bool], [Type[]] @([String], [String], [Bool]))
     $DllImportConstructor = [Runtime.InteropServices.DllImportAttribute].GetConstructor(@([String]))
     $FieldArray = [Reflection.FieldInfo[]] @(
         [Runtime.InteropServices.DllImportAttribute].GetField('EntryPoint'),
@@ -33,12 +35,14 @@ function Copy-RawItem {
         [Runtime.InteropServices.CallingConvention]::Winapi,
         [Runtime.InteropServices.CharSet]::Unicode
     )
-    $SetLastErrorCustomAttribute = New-Object Reflection.Emit.CustomAttributeBuilder($DllImportConstructor, @('kernel32.dll'), $FieldArray, $FieldValueArray)
+    $SetLastErrorCustomAttribute = New-Object Reflection.Emit.CustomAttributeBuilder(
+        $DllImportConstructor, @('kernel32.dll'), $FieldArray, $FieldValueArray)
     $PInvokeMethod.SetCustomAttribute($SetLastErrorCustomAttribute)
     $Kernel32 = $TypeBuilder.CreateType()
     $CopyResult = $Kernel32::CopyFile($Path, $Destination, ([Bool] $PSBoundParameters['FailIfExists']))
     if ($CopyResult -eq $False) {
-        throw New-Object ComponentModel.Win32Exception([System.Runtime.InteropServices.Marshal]::GetLastWin32Error())
+        throw New-Object ComponentModel.Win32Exception(
+            [System.Runtime.InteropServices.Marshal]::GetLastWin32Error())
     }
     else {
         Write-Output (Get-ChildItem $Destination)
