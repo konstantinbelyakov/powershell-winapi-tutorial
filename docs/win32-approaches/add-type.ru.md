@@ -54,5 +54,5 @@
 --8<-- "examples/add-type/CopyRawItem.ps1"
 ```
 
-!!! note
+!!! примечание
     Использованный здесь код доступен на GitHub: [powershell-winapi-tutorial/examples/add-type](https://github.com/konstantinbelyakov/powershell-winapi-tutorial/tree/main/examples/add-type).
