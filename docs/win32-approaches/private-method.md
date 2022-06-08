@@ -1,1 +1,1 @@
-# Get a Private .NET Method that Calls the Win32 API Function
+# Get a Private .NET Method that Calls the Windows API Function

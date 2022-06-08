@@ -1,1 +1,1 @@
-# Three Ways to Call a Win32 API Method
+# Three Ways to Call a Windows API Method

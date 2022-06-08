@@ -1,1 +1,1 @@
-# Call the Win32 API Function from a Dynamically Defined Method
+# Call the Windows API Function from a Dynamically Defined Method

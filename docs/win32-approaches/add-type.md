@@ -1,4 +1,4 @@
-# Use the Add-Type Cmdlet that Calls the Win32 API Function
+# Use the Add-Type Cmdlet that Calls the Windows API Function
 
 The [Add-Type](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type) cmdlet adds a specified .NET class to a PowerShell session. This topic demonstrates how to use this cmdlet to access the [CopyFile](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfile) function declared in the _kernel32.dll_ library.
 
@@ -29,7 +29,6 @@ This script does the following:
 
         The [DllImport](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dllimportattribute) attribute indicates that the `CopyFile` method is exposed by the _kernel32.dll_ library as a static entry point.
 
-
         Note the correct translation of C++ parameter types to corresponding .NET types:
 
         | C/C++ Type | .NET Type |
@@ -47,21 +46,23 @@ This script does the following:
 * You can declare the `Copy-RawItem` commandlet in a [custom PowerShell module file](https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module) --- to make your code reusable.
 * You can implement error handling --- throw an exception when `CopyFile` fails.
 
-The code below demonstrates the _CopyRawItem.psm1_ module implementation:
+The code below demonstrates the _CopyRawItem.psm1_ module implementation, with the above improvements:
 
 ```psm1 title="PowerShell Module"
 --8<-- "examples/add-type/CopyRawItem.psm1"
 ```
 
-You can import this module and call `Copy-RawItem` from your script as follows:
+You can [import](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/import-module) this module and call `Copy-RawItem` from your script as follows:
 
 ```ps1 title="PowerShell"
 --8<-- "examples/add-type/CopyRawItem.ps1"
 ```
 
-Here, the security account manager database file is copied from the [volume shadow copy](https://docs.microsoft.com/en-us/windows/win32/vss/volume-shadow-copy-service-portal) to a temporary folder (which is impossible when using standard [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item) commandlet). If you run `Copy-RawItem` twice, you will see "The file exists" error:
+Here, the security account manager database file is copied from the [volume shadow copy](https://docs.microsoft.com/en-us/windows/win32/vss/volume-shadow-copy-service-portal) to a temporary folder (which is impossible when using standard [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item) cmdlet). If you run `Copy-RawItem` twice, you will see the "file exists" error:
 
 ![Copy-RawItem result](../images/copy-rawitem-result.png)
+
+If you specify an incorrect path, the "system cannot find the path specified" error is displayed.
 
 !!! Tip
     If you receive the "Access is denied" error when accessing the shadow copy, run your PowerShell session as administrator.

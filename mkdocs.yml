@@ -4,7 +4,7 @@ repo_url: https://github.com/konstantinbelyakov/powershell-winapi-tutorial
 edit_uri: edit/main/docs/
 nav:
   - index.md
-  - Ways to Call a Win32 API Method:
+  - Ways to Call a Windows API Method:
      - win32-approaches/index.md
      - "Approach 1: Add-Type Cmdlet": win32-approaches/add-type.md
      - "Approach 2: Private .NET Method": win32-approaches/private-method.md
@@ -26,7 +26,7 @@ plugins:
           site_name: "Вызов Windows API из PowerShell"
       nav_translations:
         ru:
-          Ways to Call a Win32 API Method: Способы вызова методов Win32 API
+          Ways to Call a Windows API Method: Способы вызова методов Windows API
           "Approach 1: Add-Type Cmdlet": "Способ 1: Командлет Add-Type"
           "Approach 2: Private .NET Method": "Способ 2: Приватный .NET метод"
           "Approach 3: Reflection": "Способ 3: Отражение (рефлексия)"

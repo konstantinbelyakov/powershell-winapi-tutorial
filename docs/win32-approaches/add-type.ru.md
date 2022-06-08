@@ -1,10 +1,10 @@
-# Использование командлета Add-Type для вызова функции Win32 API
+# Использование коммандлета Add-Type для вызова функции Windows API
 
-Командлет [Add-Type](https://docs.microsoft.com/ru-ru/powershell/module/microsoft.powershell.utility/add-type) добавляет заданный .NET класс в текущий сеанс PowerShell. Данная статья демонстрирует использование этого командлета для доступа к функции [CopyFile](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfile), объявленной в библиотеке  _kernel32.dll_.
+Коммандлет [Add-Type](https://docs.microsoft.com/ru-ru/powershell/module/microsoft.powershell.utility/add-type) добавляет заданный .NET класс в текущий сеанс PowerShell. Данная статья демонстрирует использование этого командлета для доступа к функции [CopyFile](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfile), объявленной в библиотеке  _kernel32.dll_.
 
 ## Базовая реализация
 
-Рассмотрим скрипт вызывающий функцию `CopyFile`:
+Рассмотрим скрипт, вызывающий функцию `CopyFile`:
 
 ```ps1 title="PowerShell"
 --8<-- "examples/add-type/CopyItemSimple.ps1"
@@ -27,6 +27,8 @@
         --8<-- "examples/add-type/CopyFile.cs"
         ```
 
+        Аттрибут [DllImport](https://docs.microsoft.com/ru-ru/dotnet/api/system.runtime.interopservices.dllimportattribute) указывает что метод `CopyFile` доступен в библиотеке _kernel32.dll_ в качестве статической точки входа.
+
         Обратите внимание на корректность соответствия типов параметров в С++ и в .NET коде:
 
         | Тип C/C++  | Тип .NET  |
@@ -34,9 +36,7 @@
         | BOOL       | bool      |
         | LPCTSTR    | string    |
 
-        Аттрибут [DllImport](https://docs.microsoft.com/ru-ru/dotnet/api/system.runtime.interopservices.dllimportattribute) указывает что метод `CopyFile` доступен в библиотеке _kernel32.dll_ в качестве статической точки входа.
-
-* Командлет `Add-Type` создает класс `Kernel32` содержащий метод `CopyItem`, определение которого задано на предыдущем шаге.
+* Командлет `Add-Type` создает класс `Kernel32`, содержащий метод `CopyItem`, определение которого задано на предыдущем шаге.
 
 * Последняя строка кода вызывает метод `Kernel32::CopyFile` для копирования файла _calc.exe_ из папки _Windows\System32_ на рабочий стол.
 
@@ -46,13 +46,13 @@
 * Вы можете объявить командлет `Copy-RawItem` в [своем PowerShell модуле](https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module) --- чтобы облегчить повторное использование кода.
 * Вы можете реализовать обработку ошибок --- генерировать исключение при неудачном завершении `CopyFile`.
 
-Следующий ниже код демонстрирует реализацию модуля _CopyRawItem.psm1_:
+Следующий ниже код демонстрирует реализацию модуля _CopyRawItem.psm1_ с учетом вышеизложенных доработок:
 
 ```psm1 title="Модуль PowerShell"
 --8<-- "examples/add-type/CopyRawItem.psm1"
 ```
 
-Вы можете импортировать этот модуль и вызывать `Copy-RawItem` из вашего скрипта таким образом:
+Вы можете [импортировать](https://docs.microsoft.com/ru-ru/powershell/module/microsoft.powershell.core/import-module) этот модуль и вызвать `Copy-RawItem` из вашего скрипта таким образом:
 
 ```ps1 title="PowerShell"
 --8<-- "examples/add-type/CopyRawItem.ps1"
@@ -61,6 +61,8 @@
 В этом примере, файл базы данных диспетчера учётных записей безопасности копируется из [теневой копии тома](https://docs.microsoft.com/ru-ru/windows/win32/vss/volume-shadow-copy-service-portal) во временную папку (что невозможно при использовании стандартного командлета [Copy-Item](https://docs.microsoft.com/ru-ru/powershell/module/microsoft.powershell.management/copy-item)). Если запустить `Copy-RawItem` дважды, вы получите ошибку "The file exists":
 
 ![Copy-RawItem result](../images/copy-rawitem-result.png)
+
+При задании неверного пути выдается ошибка "The system cannot find the path specified".
 
 !!! Tip "Совет"
     Если вы получаете ошибку "Access is denied" при доступе к теневой копии, перезапустите сеанс PowerShell от имени администратора.
