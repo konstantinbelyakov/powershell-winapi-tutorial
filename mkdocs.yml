@@ -16,20 +16,20 @@ plugins:
       docs_structure: suffix
       default_language: en
       languages:
-        en:
+        - locale: en
           name: English
           build: true
+          default: true
           site_name: "Windows API Access From PowerShell"
-        ru:
+        - locale: ru
           name: Russian
           build: true
           site_name: "Вызов Windows API из PowerShell"
-      nav_translations:
-        ru:
-          Ways to Call a Windows API Method: Способы вызова методов Windows API
-          "Approach 1: Add-Type Cmdlet": "Способ 1: Командлет Add-Type"
-          "Approach 2: Private .NET Method": "Способ 2: Приватный .NET метод"
-          "Approach 3: Reflection": "Способ 3: Отражение (рефлексия)"
+          nav_translations:
+            Ways to Call a Windows API Method: Способы вызова методов Windows API
+            "Approach 1: Add-Type Cmdlet": "Способ 1: Командлет Add-Type"
+            "Approach 2: Private .NET Method": "Способ 2: Приватный .NET метод"
+            "Approach 3: Reflection": "Способ 3: Отражение (рефлексия)"
   - git-revision-date-localized
 theme:
     name: material
