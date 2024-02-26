@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/summary/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/summary/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/summary/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/add-type/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/add-type/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/add-type/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/private-method/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/private-method/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/private-method/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/reflection/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/reflection/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/reflection/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/summary/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/summary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/summary/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/add-type/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/add-type/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/add-type/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/private-method/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/private-method/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/private-method/"/>
+    </url>
+    <url>
+        <loc>https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/reflection/</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/ru/win32-approaches/reflection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://konstantinbelyakov.github.io/powershell-winapi-tutorial/win32-approaches/reflection/"/>
+    </url>
+</urlset>
